@@ -1,0 +1,29 @@
+Gallardo Vargas Victor
+Ortiz Cazares Luis
+Parra Parra Vyaneth
+
+Ortiz redactando: fue un inicio largo pero despues de casi 2 semanas del ejemplo
+usuarios/proyectos y una para el proyecto, tenemos algo, talvez no sea perfecto
+talvez se vea con muy poco conocimiento de diseño web pero se aprendio bastante
+
+Pasos y obstaculos
+1) La base de datos, junto con este ReadMe vienen 2 archivos con extension PHP
+	esos se diseñaron antes del ejemplo y se probaron, notese que no tiene
+	los campos 'created_at' y 'updated_at' no vienen.
+	En el otro se hizo una conversion que hasta a nosotros nos da risa
+	pero funciona, para crear la tabla relacion pokemon_tipo.
+
+2)El diseño, decidimos algo simple por nuestro escaso conocimiento del diseño.
+
+3)La consulta y rutas, se soluciono con mucho cuidado ya que era la parte para
+	nosotros mas importante ya que es compleja y si te equivocas no se muestra nada
+	o se muestra mal y mostrar esa lo basico en este proyecto.
+
+4)img, somos el equipo al que le recomendo que son estaticas y que usaramos asset
+	pues no fueron assets pero las imagenes no se pierden.
+
+
+Para finalizar, incluimos nuestra base de datos para que realize pruebas
+	solamente creela con el nombre "pkm_bd" y ejecute el codigo del archivo pkm_bd
+
+										saludos :)
