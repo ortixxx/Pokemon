@@ -48,7 +48,9 @@
 					@endforeach
 				</tbody>
 			</table>
+			{!! $pokemon->render() !!}
 		</div>
+
 		<!-- Intento de paginacion -->
 		<!-- <div class="panel-footer">
 		<ul class="pager">

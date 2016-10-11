@@ -14,7 +14,7 @@ class pokemonController extends Controller
     public function home()
     {
     	$id=19;
-        $pokemon=pokemon::all();
+        $pokemon=DB::table('pokemon')->paginate(5);
     	$tipo=tipo::all();
         $pt=p_t::all();
    		return view('inicio', compact('pokemon', 'tipo', 'pt', 'id'));
@@ -26,7 +26,7 @@ class pokemonController extends Controller
             ->join('p_t AS tab', 'tab.pokemon', '=', 'p.id_pkm')
             ->where('tab.tipo', '=', $id)
             ->select('p.id_pkm','p.nombre','p.tipo_1','p.tipo_2')
-            ->get();
+            ->paginate(5);
         
         $tipo=tipo::all();
         $pt=p_t::all();
@@ -40,7 +40,7 @@ class pokemonController extends Controller
     	$pokemon=DB::table('pokemon AS p')
     		->where('p.nombre', 'LIKE', '%'.$nombre.'%')
     		->select('p.id_pkm','p.nombre','p.tipo_1','p.tipo_2')
-            ->get();
+            ->paginate(5);
 
         $tipo=tipo::all();
         $pt=p_t::all();

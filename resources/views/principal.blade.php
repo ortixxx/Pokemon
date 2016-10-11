@@ -35,10 +35,10 @@
     @yield('encabezado')
     <hr>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4 tabla">
   @yield('menu')
   </div>
-  <div class="col-md-8">
+  <div class="col-md-8 col-md-offset-4">
     @yield('contenido')
   </div>
 </div>
