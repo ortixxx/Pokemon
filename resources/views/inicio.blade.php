@@ -25,12 +25,12 @@
 						<th></th>
 						<th>Nombre</th>
 						<th>Tipo</th>
-						<th>Info</th>
+						<th>Ataque</th>
 					</tr>
 				</thead>
 				<tbody>
 					@foreach($pokemon as $p)
-						<tr>
+						<tr data-toggle="modal" data-target="#{{$p->id_pkm}}">
 							<td>{{$n=$p->id_pkm}}</td>
 							<td><img src="img/{{$n}}.png" class="img-responsive"></td>
 							<td>{{$p->nombre}}</td>
@@ -41,22 +41,46 @@
 									@endif
 								@endforeach						
 							</td>
-							<td>
-								<a href="{{url('/pdfPokemon')}}/{{$n}}"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
-							</td>
+							<td>{{$p->ataque}}</td>
 						</tr>
+						<div id="{{$p->id_pkm}}" class="modal fade" role="dialog">
+						<div class="modal-dialog">
+							<div class="modal-content">
+						    	<div class="modal-header">
+						        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+						        	<h4 class="modal-title">{{$p->nombre}} #{{$p->id_pkm}}</h4>
+						        </div>
+						        <div class="modal-body">
+						        	<center>
+						        		<img src="img/{{$n}}.png">
+								        @foreach($pt as $tab)
+											@if($p->id_pkm==$tab->pokemon)
+												<img src="img/type/{{$tab->tipo}}.png" class="img-responsive">
+											@endif
+										@endforeach
+										
+										<br>Peso: {{$p->peso_kg}} Kg
+										<br>Altura: {{$p->altura_m}} m
+										<br>Ataque: {{$p->ataque}}
+										@foreach($caramelos as $ca)
+											@if($p->id_caramelo==$ca->id_caramelo)
+												<br>Caramelos: <img src="img/candy.png" height="25" width="25">{{$ca->cantidad}}
+											@endif
+										@endforeach
+										
+									</center>
+						        </div>
+						        <div class="modal-footer">
+								    <a href="{{url('/darPoder')}}/{{$p->id_pkm}}" class="btn btn-danger btn-xs">Poder <span class="glyphicon glyphicon-upload" aria-hidden="true"></span></a>
+						        	<a href="{{url('/pdfPokemon')}}/{{$n}}" target="_blank" class="btn btn-success btn-xs">PDF <span class="glyphicon glyphicon-book" aria-hidden="true"></span></a>
+						        </div>
+						    </div>
+						</div>
+						</div>
 					@endforeach
 				</tbody>
 			</table>
 			{!! $pokemon->render() !!}
 		</div>
-
-		<!-- Intento de paginacion -->
-		<!-- <div class="panel-footer">
-		<ul class="pager">
-			<li class="disabled"><a href="">&larr; Prev</a></li>
-			<li><a href="#">Next &rarr;</a></li>
-		</ul>
-		</div> -->
 	</div>
 @stop

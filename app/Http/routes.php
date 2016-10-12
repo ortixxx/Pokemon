@@ -18,3 +18,5 @@ Route::get('/{id}', 'pokemonController@buscaTipo');
 Route::post('/buscaNombre', 'pokemonController@buscaNombre');
 
 Route::get('/pdfPokemon/{id}', 'pokemonController@pdfPokemon');
+
+Route::get('/darPoder/{id}', 'pokemonController@darPoder');
