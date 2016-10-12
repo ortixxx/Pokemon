@@ -22,7 +22,7 @@
         <div class="form-group">
           <input name="buscar" type="text" class="form-control" placeholder="Buscar">
         </div>
-        <button type="submit" class="btn btn-default">Enviar</button>
+        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="http://www.9gag.com" target="_blank"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a></li>
